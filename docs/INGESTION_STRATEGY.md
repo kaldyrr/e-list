@@ -2,6 +2,8 @@
 
 Цель: получать товары, цены и наличие из внешних источников так, чтобы проект был устойчивым, масштабируемым и юридически безопасным.
 
+Базовый продуктовый алгоритм находится в [`universal_tech_price_parser_algorithm.md`](../universal_tech_price_parser_algorithm.md). Этот документ описывает production-адаптацию: источники, ограничения, очереди, хранение и правила включения коннекторов.
+
 ## Принцип
 
 Мы не обходим `robots.txt`, CAPTCHA, антибот-защиту, rate limits и закрытые API. Если источник запрещает автоматический сбор или начинает отвечать лимитами, коннектор останавливается и требует ручного решения: партнерский фид, официальный API, договоренность с магазином или отключение источника.
@@ -217,10 +219,14 @@ processors + amd + ryzen-9-7950x + socket-am5
 1. Таблица источников.
 2. Robots guard.
 3. Feed/manual adapter.
-4. Один официальный/ручной источник.
-5. Normalizer для процессоров.
-6. Product matcher.
-7. Price history.
-8. Moderation queue.
+4. Нормализованная целевая карточка товара.
+5. Один официальный/ручной источник.
+6. Normalizer для текста, цены, емкости и наличия.
+7. Category-specific matcher для CPU/GPU/SSD/RAM.
+8. Confidence scoring.
+9. Price outlier detection.
+10. Market price report: median, average, p25/p75, min trusted.
+11. Price history.
+12. Moderation queue.
 
 HTML-коннекторы к крупным сайтам добавлять только после легальной проверки источника и понятного rate limit.

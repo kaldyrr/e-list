@@ -120,3 +120,9 @@ pnpm dev:api
 - QA заводит баги отдельными issue с шагами воспроизведения, ожидаемым и фактическим результатом.
 
 Подробная инструкция для команды находится в [docs/WORKFLOW.md](docs/WORKFLOW.md).
+
+## Парсинг и цены
+
+Базовый алгоритм расчета рыночной цены описан в [universal_tech_price_parser_algorithm.md](universal_tech_price_parser_algorithm.md).
+
+Production-правила ingestion-пайплайна: [docs/INGESTION_STRATEGY.md](docs/INGESTION_STRATEGY.md).
