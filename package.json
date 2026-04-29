@@ -1,0 +1,26 @@
+{
+  "name": "e-list",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Product and price aggregator inspired by E-Katalog.",
+  "packageManager": "pnpm@10.20.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @elist/web --filter @elist/api dev",
+    "dev:web": "pnpm --filter @elist/web dev",
+    "dev:api": "pnpm --filter @elist/api dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "format": "prettier --write .",
+    "db:up": "docker compose up -d postgres redis",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

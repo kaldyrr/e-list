@@ -77,12 +77,13 @@ docs/
 
 ## Быстрый старт для разработчика
 
-Пока проект не содержит приложений. После первичного scaffolding команды должны придерживаться такого порядка:
-
 ```bash
 git clone https://github.com/kaldyrr/e-list.git
 cd e-list
 git checkout develop
+cp .env.example .env
+pnpm install
+pnpm db:up
 ```
 
 Дальше разработчик берет свою задачу и создает ветку от `develop`:
@@ -100,6 +101,13 @@ git status
 git add .
 git commit -m "feat: short task description"
 git push -u origin feature/task-name
+```
+
+После появления приложений:
+
+```bash
+pnpm dev:web
+pnpm dev:api
 ```
 
 ## Правила качества
