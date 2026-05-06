@@ -39,6 +39,7 @@ function offer(price: number, index: number): NormalizedOffer {
     isSuspicious: false,
     matchReasons: ["model_match"],
     matchScore: 90,
+    matchStatus: "exact",
     normalizedAvailability: "in_stock",
     normalizedTitle: `offer ${index}`,
     price,

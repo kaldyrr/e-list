@@ -54,8 +54,31 @@ export type NormalizedOffer = RawOffer & {
   normalizedTitle: string;
   normalizedAvailability: Availability;
   matchScore: number;
+  matchStatus: "exact" | "probable" | "reject";
   matchReasons: string[];
   confidence: number;
   isSuspicious: boolean;
   suspiciousReasons: string[];
+};
+
+export type ParserRunResult = {
+  id: string;
+  target: TargetProduct;
+  parsedAt: string;
+  offersTotal: number;
+  offersAccepted: number;
+  offersRejected: number;
+  marketPrice: {
+    average: number;
+    count: number;
+    max: number;
+    median: number;
+    min: number;
+    p25: number;
+    p75: number;
+    trimmedAverage: number;
+  } | null;
+  acceptedOffers: NormalizedOffer[];
+  rejectedOffers: NormalizedOffer[];
+  exclusions: Record<string, number>;
 };

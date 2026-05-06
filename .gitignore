@@ -11,6 +11,8 @@ build/
 coverage/
 playwright-report/
 test-results/
+storage/parser-runs/
+apps/api/storage/parser-runs/
 
 *.log
 npm-debug.log*

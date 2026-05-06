@@ -126,3 +126,11 @@ pnpm dev:api
 Базовый алгоритм расчета рыночной цены описан в [universal_tech_price_parser_algorithm.md](universal_tech_price_parser_algorithm.md).
 
 Production-правила ingestion-пайплайна: [docs/INGESTION_STRATEGY.md](docs/INGESTION_STRATEGY.md).
+
+Временный запуск парсера без БД:
+
+```bash
+pnpm --filter @elist/api parser:demo
+```
+
+Результаты пишутся в `storage/parser-runs/*.json`.

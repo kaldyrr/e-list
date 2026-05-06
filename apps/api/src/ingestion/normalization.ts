@@ -23,6 +23,9 @@ const badWords = [
 ];
 
 const availabilityMap: Record<string, Availability> = {
+  in_stock: "in_stock",
+  out_of_stock: "out_of_stock",
+  preorder: "preorder",
   "в корзину": "in_stock",
   "в наличии": "in_stock",
   "есть в наличии": "in_stock",
