@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-[#0b1020] text-gray-100 antialiased;
+}
+
+.card-bg {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.glow-btn {
+  background: linear-gradient(90deg,#ff7a00,#ff9a3d);
+}
